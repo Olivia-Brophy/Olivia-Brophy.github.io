@@ -10,6 +10,7 @@
   --border: #DDD2C4;
   --placeholder-bg: #FBEBA8;
   --placeholder-text: #4A3B00; /* 9.2:1 */
+  --overlay: rgb(31 26 23 / 0.92); /* lightbox backdrop */
 
   /* Type */
   --font: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -51,6 +52,7 @@
     --border: #3A322C;
     --placeholder-bg: #3D3410;
     --placeholder-text: #FBE7A1; /* 10.0:1 */
+    --overlay: rgb(16 13 11 / 0.94);
   }
 }
 
@@ -190,6 +192,130 @@ main:focus { outline: none; }
 
 .project { display: flex; flex-direction: column; }
 .project .media { margin-bottom: var(--space-5); }
+
+/* Screenshot stack: front image with two peeking behind, fans out on hover */
+.gallery { margin-bottom: var(--space-5); padding-top: var(--space-4); }
+.gallery-stack {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* shared frame for landscape shots; square/portrait set their own inline */
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.gallery-stack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--bg);
+  border: var(--border-width) solid var(--border);
+  transform-origin: bottom center;
+  transition: transform var(--transition);
+}
+.gallery-stack img:nth-child(1) { z-index: 3; }
+.gallery-stack img:nth-child(2) { z-index: 2; transform: translateY(-3%) scale(0.97) rotate(-1.5deg); }
+.gallery-stack img:nth-child(3) { z-index: 1; transform: translateY(-6%) scale(0.94) rotate(1.5deg); }
+.gallery-stack:hover img:nth-child(1),
+.gallery-stack:focus-visible img:nth-child(1) { transform: translateY(-1%); }
+.gallery-stack:hover img:nth-child(2),
+.gallery-stack:focus-visible img:nth-child(2) { transform: translate(-1.5%, -4%) scale(0.97) rotate(-3.5deg); }
+.gallery-stack:hover img:nth-child(3),
+.gallery-stack:focus-visible img:nth-child(3) { transform: translate(1.5%, -7%) scale(0.94) rotate(3.5deg); }
+.gallery-count {
+  position: absolute;
+  z-index: 4;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg);
+  color: var(--text);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+/* Lightbox carousel */
+body:has(.lightbox[open]) { overflow: hidden; }
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+}
+.lightbox::backdrop { background: var(--overlay); }
+.lightbox-track {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.lightbox-track::-webkit-scrollbar { display: none; }
+.lightbox-slide {
+  flex: 0 0 100%;
+  display: grid;
+  place-items: center;
+  padding: var(--space-8) var(--space-4);
+  scroll-snap-align: center;
+}
+.lightbox-slide img {
+  width: auto;
+  max-height: calc(100dvh - 2 * var(--space-8));
+  object-fit: contain;
+}
+.lightbox-btn {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  font: inherit;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  background: var(--bg);
+  border: var(--border-width) solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+.lightbox-btn:hover { color: var(--accent); border-color: var(--accent); }
+.lightbox-close { position: fixed; z-index: 1; top: var(--space-4); right: var(--space-4); }
+.lightbox-controls {
+  position: fixed;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.lightbox-counter {
+  margin: 0;
+  min-width: 4.5rem;
+  padding: var(--space-1) var(--space-3);
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+}
 
 .fields { margin: 0; }
 .fields dt {

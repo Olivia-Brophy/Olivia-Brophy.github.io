@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -43,7 +44,7 @@
       <ol class="stack" role="list">
         <li class="card">
           <h3>Nordea</h3>
-          <p class="meta">Developer (part-time)</p>
+          <p class="meta">Student developer</p>
           <p><span class="ph">[2–3 lines describing my work at Nordea]</span></p>
         </li>
         <li class="card">
@@ -60,20 +61,35 @@
       <div class="project-grid">
 
         <article class="card project" aria-labelledby="p1-title">
-          <h3 id="p1-title">Kanalvælger</h3>
-          <!-- Media: replace the placeholder div with ONE of these:
-            <video muted loop playsinline controls width="1280" height="720" poster="assets/media/kanalvaelger-poster.webp">
-              <source src="assets/media/kanalvaelger.mp4" type="video/mp4">
-            </video>
-            <img src="assets/media/kanalvaelger.webp" alt="DESCRIBE THE SCREENSHOT" width="1280" height="720" loading="lazy" decoding="async">
-          -->
-          <div class="media ph">[Media: video with poster, or screenshot + alt text]</div>
+          <h3 id="p1-title">Kanalvælger // Communication channel picker</h3>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Kanalvælger" aria-haspopup="dialog" aria-controls="gallery-kanal">
+              <img src="assets/media/kanal-1-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="0">
+              <img src="assets/media/kanal-2-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="1">
+              <img src="assets/media/kanal-3-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="2">
+              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
+            </button>
+            <dialog class="lightbox" id="gallery-kanal" aria-label="Kanalvælger screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/kanal-1.webp" alt="Kanalvælger welcome screen in Danish, introducing the self-help tool for choosing communication channels, with a Start button and an illustrated hammer mascot." width="1920" height="1082" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/kanal-2.webp" alt="First question, “Who is the target group?”, with the options Internal and External and a progress bar at the top." width="1920" height="1082" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/kanal-3.webp" alt="Follow-up question narrowing down the internal target group, with “Relevant for a smaller group” selected." width="1920" height="1082" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/kanal-4.webp" alt="Result screen recommending channels for internal communication to a smaller group, with links to guidance and a Start over button." width="1920" height="1082" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 4</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
           <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
+            <dt>Problem</dt><dd>Digitaliseringsstyrelsen communicates through more than ten channels, and employees had no shared way of deciding which one fits a given message. With the entire population as the audience, the wrong channel means the message doesn’t reach the people it’s meant for.</dd>
+            <dt>My role</dt><dd>I designed, built and maintained the tool end to end: the decision-tree logic, the React interface, the build pipeline and the deployment. I ran user workshops and survey tests with employees, and iterated on the content with the communications manager.</dd>
+            <dt>Technical decision</dt><dd>I designed the tool so people without development experience could maintain it. The decision tree is kept separate from the React code, and a GitLab CI/CD pipeline builds it into a single self-contained HTML file that is embedded in Umbraco. Updating the tree means editing the content, and the pipeline handles the rest: no hosting to manage and no changes to the CMS core.</dd>
+            <dt>Result</dt><dd>In production since February 2026, used by offices across the agency. Builds and deployments are automated with GitLab CI/CD. I documented the setup and handed it over, and it is now maintained by communications staff without developer involvement.</dd>
+            <dt>Tech stack</dt><dd>React, Vite, Umbraco, GitLab CI/CD</dd>
             <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
           </dl>
         </article>
@@ -81,8 +97,29 @@
         <article class="card project" aria-labelledby="p2-title">
           <h3 id="p2-title">Refugee Camp Management</h3>
           <p class="meta">With Netlight and UNHCR</p>
-          <!-- Media: see the Kanalvælger comment for video/img markup. -->
-          <div class="media ph">[Media: video with poster, or screenshot + alt text]</div>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View 5 screenshots of Refugee Camp Management" aria-haspopup="dialog" aria-controls="gallery-unhcr">
+              <img src="assets/media/unhcr-1-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="0">
+              <img src="assets/media/unhcr-2-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="1">
+              <img src="assets/media/unhcr-3-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="2">
+              <span class="gallery-count" aria-hidden="true">5 screenshots</span>
+            </button>
+            <dialog class="lightbox" id="gallery-unhcr" aria-label="Refugee Camp Management screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/unhcr-1.webp" alt="Reception Requests page listing check-in requests as cards, each with a group ID, group size and a status label such as Active, Hold or Erroneous, plus filter and sorting controls." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/unhcr-2.webp" alt="Map of the Azraq refugee camp with a location search field, filters for maintenance status and distribution, and markers for health posts and the market place." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/unhcr-3.webp" alt="Metrics page with a population pyramid of the camp’s residents by age group and gender." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/unhcr-4.webp" alt="Home screen with large tiles for Map, Create request, Reception, Metrics and Upload." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/unhcr-5.webp" alt="Zoomed-in camp map showing shelter blocks, roads and markers for child-friendly and women-friendly spaces." width="1920" height="1090" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 5</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
           <dl class="fields">
             <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
             <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
@@ -95,8 +132,28 @@
 
         <article class="card project" aria-labelledby="p3-title">
           <h3 id="p3-title">Chirp</h3>
-          <!-- Media: see the Kanalvælger comment for video/img markup. -->
-          <div class="media ph">[Media: video with poster, or screenshot + alt text]</div>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Chirp" aria-haspopup="dialog" aria-controls="gallery-chirp">
+              <img src="assets/media/chirp-1-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="0">
+              <img src="assets/media/chirp-2-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="1">
+              <img src="assets/media/chirp-3-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="2">
+              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
+            </button>
+            <dialog class="lightbox" id="gallery-chirp" aria-label="Chirp screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/chirp-1.webp" alt="Chirp: a logged-in user’s own timeline with a status message, a form for writing a new cheep and a list of their cheeps." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/chirp-2.webp" alt="Chirp public timeline when logged in, with the cheep form and Follow buttons next to other users’ cheeps." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/chirp-3.webp" alt="Chirp public timeline when logged out, listing cheeps from different users." width="1920" height="1090" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/chirp-4.webp" alt="Chirp registration page with fields for name, email and password, and an option to register with GitHub." width="1920" height="1090" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 4</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
           <dl class="fields">
             <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
             <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
@@ -109,8 +166,110 @@
 
         <article class="card project" aria-labelledby="p4-title">
           <h3 id="p4-title">Interactive Map of Denmark</h3>
-          <!-- Media: see the Kanalvælger comment for video/img markup. -->
-          <div class="media ph">[Media: video with poster, or screenshot + alt text]</div>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View 6 screenshots of Interactive Map of Denmark" aria-haspopup="dialog" aria-controls="gallery-map">
+              <img src="assets/media/map-1-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="0">
+              <img src="assets/media/map-2-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="1">
+              <img src="assets/media/map-3-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="2">
+              <span class="gallery-count" aria-hidden="true">6 screenshots</span>
+            </button>
+            <dialog class="lightbox" id="gallery-map" aria-label="Interactive Map of Denmark screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/map-1.webp" alt="Route planned between two addresses in Copenhagen, drawn in blue on the map, with the address search panel on the left." width="1920" height="1312" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/map-2.webp" alt="The whole of Denmark drawn from OpenStreetMap data, with major roads in orange and a 100 km scale bar." width="1920" height="1312" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/map-3.webp" alt="Zoomed in on Copenhagen and Amager, showing roads, parks, water and the bridge towards Sweden." width="1920" height="1312" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/map-4.webp" alt="Dark mode with a route across Denmark from Kolding to Copenhagen drawn in pink." width="1920" height="1312" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/map-5.webp" alt="Address search with autocomplete suggestions for Købmagergade in different towns." width="1920" height="1312" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/map-6.webp" alt="Close zoom on a Copenhagen neighbourhood showing individual buildings, a canal and green areas at a 50 m scale." width="1920" height="1312" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 6</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
+          <dl class="fields">
+            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
+            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
+            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
+            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
+            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
+            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+          </dl>
+        </article>
+
+        <article class="card project" aria-labelledby="p5-title">
+          <h3 id="p5-title">Markerless Pose Estimation</h3>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Markerless Pose Estimation" aria-haspopup="dialog" aria-controls="gallery-pose">
+              <img src="assets/media/pose-1-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="0">
+              <img src="assets/media/pose-2-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="1">
+              <img src="assets/media/pose-3-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="2">
+              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
+            </button>
+            <dialog class="lightbox" id="gallery-pose" aria-label="Markerless Pose Estimation screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/pose-1.webp" alt="Video frame of a person sitting on a treatment bench extending one leg, with the estimated skeleton of joints and limbs drawn on top." width="1920" height="1201" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/pose-2.webp" alt="The same exercise filmed from another angle, with the estimated skeleton overlaid." width="1920" height="1201" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/pose-3.webp" alt="A person lying on a treatment bench during a rehabilitation exercise, with the estimated skeleton overlaid." width="1920" height="1201" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img src="assets/media/pose-4.webp" alt="Title page of the report “Markerless Pose Estimation for Physical Rehabilitation: A Comparative Evaluation of MediaPipe, MMPose, and OpenPose” by Lisa Claudi Hauge and Olivia Brophy." width="1270" height="1662" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 4</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
+          <dl class="fields">
+            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
+            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
+            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
+            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
+            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
+            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+          </dl>
+        </article>
+
+        <article class="card project" aria-labelledby="p6-title">
+          <h3 id="p6-title">X9 Traffic Reports</h3>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" aria-label="View larger screenshot of X9 Traffic Reports" aria-haspopup="dialog" aria-controls="gallery-traffic">
+              <img src="assets/media/traffic-1-sm.webp" alt="" width="960" height="544" loading="lazy" decoding="async" data-index="0">
+            </button>
+            <dialog class="lightbox" id="gallery-traffic" aria-label="X9 Traffic Reports screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/traffic-1.webp" alt="Three phone screens from the X9 app: a map of Copenhagen with traffic report markers, a detail dialog for a heavy traffic report, and the profile screen." width="1508" height="853" loading="lazy" decoding="async"></li>
+              </ul>
+            </dialog>
+          </div>
+          <dl class="fields">
+            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
+            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
+            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
+            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
+            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
+            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+          </dl>
+        </article>
+
+        <article class="card project" aria-labelledby="p7-title">
+          <h3 id="p7-title">Othello AI</h3>
+          <div class="gallery">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 903" aria-label="View larger screenshot of Othello AI" aria-haspopup="dialog" aria-controls="gallery-othello">
+              <img src="assets/media/othello-1-sm.webp" alt="" width="960" height="903" loading="lazy" decoding="async" data-index="0">
+            </button>
+            <dialog class="lightbox" id="gallery-othello" aria-label="Othello AI screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img src="assets/media/othello-1.webp" alt="Othello game window with an 8 by 8 board in the middle of a game, showing dark and light pieces." width="1920" height="1806" loading="lazy" decoding="async"></li>
+              </ul>
+            </dialog>
+          </div>
           <dl class="fields">
             <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
             <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>

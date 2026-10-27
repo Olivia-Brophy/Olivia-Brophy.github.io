@@ -4,9 +4,9 @@ Personal portfolio for Olivia Brophy (junior full-stack developer), hosted on Gi
 
 ## Tech
 - Plain semantic HTML and CSS. No framework, no build step.
-- Minimal JavaScript only if strictly needed (currently none).
+- Minimal JavaScript only if strictly needed (currently only `script.js`: the screenshot carousel).
 - English content.
-- Files: `index.html` (single page), `styles.css` (tokens + all styles), `assets/` (favicon, `media/`).
+- Files: `index.html` (single page), `styles.css` (tokens + all styles), `script.js` (screenshot carousel), `assets/` (favicon, `media/`).
 
 ## Quality
 - WCAG 2.2 AA: proper landmarks, logical heading order (one h1 → h2 per section → h3), skip link, visible `:focus-visible` states, AA contrast, meaningful alt text.
@@ -30,7 +30,8 @@ Friendly and personal without being cute. Modern, calm, minimal.
 ## Content conventions
 - Unfilled content uses `<span class="ph">[...]</span>` (or `div.ph` for media), which renders as a highlighted "TO FILL" box. Remove the `ph` class when filling.
 - Project fields, in order: Problem, My role, Technical decision, Result, Tech stack, Media, Link.
-- Project order: Kanalvælger, Refugee Camp Management (Netlight + UNHCR), Chirp, Interactive Map of Denmark.
+- Project order: Kanalvælger, Refugee Camp Management (Netlight + UNHCR), Chirp, Interactive Map of Denmark, Markerless Pose Estimation, X9 Traffic Reports, Othello AI.
+- Project media: a `.gallery` stack (best screenshot first; `*-sm.webp` 960px for the first three, full 1920px `*.webp` in the `<dialog>` carousel). Landscape stacks share a 16:9 frame (cropped from the top); square or portrait fronts set their own `aspect-ratio` inline. Source screenshots live in `../PROJECTS/<repo>/SCREENSHOTS`.
 
 ## Rules
 - Don't add features, sections or libraries that weren't asked for.
