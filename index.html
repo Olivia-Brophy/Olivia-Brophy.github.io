@@ -33,9 +33,15 @@
   <main id="main" tabindex="-1">
     <!-- 1. Intro -->
     <section id="top" class="intro container" aria-labelledby="intro-heading">
-      <h1 id="intro-heading">Olivia Brophy</h1>
-      <p class="role">Junior Full-Stack Developer</p>
-      <p class="lead"><span class="ph">[One line about what I build]</span></p>
+      <div class="intro-text">
+        <h1 id="intro-heading">Olivia Brophy</h1>
+        <p class="role">Junior Full-Stack Developer</p>
+        <p class="education">BSc in Software Development, IT University of Copenhagen</p>
+        <p class="lead">I’m a developer who cares about the people on the other side of the screen. I like making things fast, accessible and easy to understand, and writing code the next person can pick up without a headache. I do my best work in teams that collaborate closely and still find time to laugh. As much a people person as a computer person.</p>
+      </div>
+      <div class="profile">
+        <img class="profile-photo" src="assets/media/olivia.webp" alt="Portrait of Olivia Brophy" width="480" height="480" fetchpriority="high">
+      </div>
     </section>
 
     <!-- 2. Experience -->
@@ -44,13 +50,13 @@
       <ol class="stack" role="list">
         <li class="card">
           <h3>Nordea</h3>
-          <p class="meta">Student developer</p>
-          <p><span class="ph">[2–3 lines describing my work at Nordea]</span></p>
+          <p class="meta">Student developer – Savings and Investments, since 2026</p>
+          <p>I’m a front-end developer in a Scrum team in Savings and Investments, building with Angular and the shared common components. I have a strong focus on UI and accessibility, and I’m currently supporting the UI uplift PI. I’m also part of the front-end ambassador team, and our development is assisted by Copilot.</p>
         </li>
         <li class="card">
           <h3>Digitaliseringsstyrelsen</h3>
-          <p class="meta">Web – Umbraco, accessibility, performance optimization</p>
-          <p><span class="ph">[2–3 lines describing my work at Digitaliseringsstyrelsen]</span></p>
+          <p class="meta">Student worker in the web team, 2024–2026</p>
+          <p>I developed, documented and maintained internal web applications with TypeScript, React and HTML/CSS, and worked on web development, design and content updates. I was the team’s quality assurance and accessibility supervisor, and I developed and taught courses on CMS platforms, film editing and digital accessibility.</p>
         </li>
       </ol>
     </section>
@@ -62,12 +68,12 @@
 
         <article class="card project" aria-labelledby="p1-title">
           <h3 id="p1-title">Kanalvælger // Communication channel picker</h3>
+          <p class="meta">Professional work for Digitaliseringsstyrelsen</p>
           <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Kanalvælger" aria-haspopup="dialog" aria-controls="gallery-kanal">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 541" aria-label="View 4 screenshots of Kanalvælger" aria-haspopup="dialog" aria-controls="gallery-kanal">
               <img src="assets/media/kanal-1-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="0">
               <img src="assets/media/kanal-2-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="1">
               <img src="assets/media/kanal-3-sm.webp" alt="" width="960" height="541" loading="lazy" decoding="async" data-index="2">
-              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
             </button>
             <dialog class="lightbox" id="gallery-kanal" aria-label="Kanalvælger screenshots">
               <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
@@ -90,19 +96,18 @@
             <dt>Technical decision</dt><dd>I designed the tool so people without development experience could maintain it. The decision tree is kept separate from the React code, and a GitLab CI/CD pipeline builds it into a single self-contained HTML file that is embedded in Umbraco. Updating the tree means editing the content, and the pipeline handles the rest: no hosting to manage and no changes to the CMS core.</dd>
             <dt>Result</dt><dd>In production since February 2026, used by offices across the agency. Builds and deployments are automated with GitLab CI/CD. I documented the setup and handed it over, and it is now maintained by communications staff without developer involvement.</dd>
             <dt>Tech stack</dt><dd>React, Vite, Umbraco, GitLab CI/CD</dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+            <dt>Link</dt><dd>Code not public</dd>
           </dl>
         </article>
 
         <article class="card project" aria-labelledby="p2-title">
           <h3 id="p2-title">Refugee Camp Management</h3>
-          <p class="meta">With Netlight and UNHCR</p>
+          <p class="meta">University project in collaboration with Netlight and UNHCR</p>
           <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View 5 screenshots of Refugee Camp Management" aria-haspopup="dialog" aria-controls="gallery-unhcr">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 545" aria-label="View 5 screenshots of Refugee Camp Management" aria-haspopup="dialog" aria-controls="gallery-unhcr">
               <img src="assets/media/unhcr-1-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="0">
               <img src="assets/media/unhcr-2-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="1">
               <img src="assets/media/unhcr-3-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="2">
-              <span class="gallery-count" aria-hidden="true">5 screenshots</span>
             </button>
             <dialog class="lightbox" id="gallery-unhcr" aria-label="Refugee Camp Management screenshots">
               <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
@@ -121,23 +126,23 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+            <dt>Problem</dt><dd>Camp staff needed one place to see the camp map, handle reception and maintenance requests and follow population statistics, instead of spreadsheets and printed out maps.</dd>
+            <dt>My role</dt><dd>Working in a student team, I worked across the stack. I created wireframes and a LO-FI prototype. I built the header and navigation, set up the frontend test suite with Jest and React Testing Library, and added sorting of reception requests by date. I also took the app to production, creating the Azure deployment pipeline, connecting the deployed API to its database, seeding camp data at startup and moving API URLs into environment config.</dd>
+            <dt>Technical decision</dt><dd>Every fetch call in the frontend pointed at a hardcoded localhost URL, which broke as soon as the app was deployed. I moved the API base URL into Vite environment files so the same code runs locally and in production, and added a navigation fallback to the Azure Static Web Apps config so refreshing a page no longer returned a 404.</dd>
+            <dt>Result</dt><dd>Deployed on Azure, with the React frontend on Static Web Apps and the .NET API on App Service. Frontend and backend tests run automatically in GitHub Actions. It was very well received amongst stakeholders.</dd>
+            <dt>Tech stack</dt><dd>React, TypeScript, Vite, Tailwind CSS, Mapbox GL, ECharts, ASP.NET Core (.NET 8), Entity Framework Core, SQLite, Jest, Azure, GitHub Actions</dd>
+            <dt>Link</dt><dd>Code not public</dd>
           </dl>
         </article>
 
         <article class="card project" aria-labelledby="p3-title">
           <h3 id="p3-title">Chirp</h3>
+          <p class="meta">University project</p>
           <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Chirp" aria-haspopup="dialog" aria-controls="gallery-chirp">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 545" aria-label="View 4 screenshots of Chirp" aria-haspopup="dialog" aria-controls="gallery-chirp">
               <img src="assets/media/chirp-1-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="0">
               <img src="assets/media/chirp-2-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="1">
               <img src="assets/media/chirp-3-sm.webp" alt="" width="960" height="545" loading="lazy" decoding="async" data-index="2">
-              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
             </button>
             <dialog class="lightbox" id="gallery-chirp" aria-label="Chirp screenshots">
               <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
@@ -155,23 +160,59 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+            <dt>Problem</dt><dd>The brief for the Analysis, Design and Software Architecture course: build “Chirp”, a small Twitter-like platform, and evolve it week by week from a command-line program into a deployed web application with accounts, following and a real database.</dd>
+            <dt>My role</dt><dd>In a group of five, I focused on the data layer and testing. I moved storage from CSV to SQLite and then to Entity Framework Core with a repository pattern, wrote integration tests, and set up end-to-end tests with Playwright. I also added GitHub login with OAuth, follow buttons per author, the final visual redesign and the Azure deployment workflow.</dd>
+            <dt>Technical decision</dt><dd>I made the integration tests run against an in-memory SQLite database instead of the real database file. Every test starts from a clean, known state, the suite runs fast, and tests can’t corrupt shared data, so the whole suite runs in GitHub Actions on every push.</dd>
+            <dt>Result</dt><dd>Deployed on Azure App Service with automated build, test and release workflows in GitHub Actions.</dd>
+            <dt>Tech stack</dt><dd>C#, ASP.NET Core Razor Pages, Entity Framework Core, SQLite, ASP.NET Identity with GitHub OAuth, xUnit, Playwright, Azure, GitHub Actions</dd>
+            <dt>Link</dt><dd><a href="https://github.com/ITU-BDSA2024-GROUP22/Chirp">github.com/ITU-BDSA2024-GROUP22/Chirp</a></dd>
+          </dl>
+        </article>
+
+        <article class="card project" aria-labelledby="p6-title">
+          <h3 id="p6-title">X9 Traffic Reports</h3>
+          <p class="meta">University project</p>
+          <div class="gallery gallery--device">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 488 / 901" aria-label="View 6 screenshots of X9 Traffic Reports" aria-haspopup="dialog" aria-controls="gallery-traffic">
+              <img alt="" src="assets/media/traffic-1.webp" width="488" height="901" loading="lazy" decoding="async" data-index="0">
+              <img alt="" src="assets/media/traffic-2.webp" width="488" height="901" loading="lazy" decoding="async" data-index="1">
+              <img alt="" src="assets/media/traffic-3.webp" width="488" height="901" loading="lazy" decoding="async" data-index="2">
+            </button>
+            <dialog class="lightbox" id="gallery-traffic" aria-label="X9 Traffic Reports screenshots">
+              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
+              <ul class="lightbox-track" role="list">
+                <li class="lightbox-slide"><img alt="X9 map of Copenhagen with red markers for traffic reports, one opened to show a speed camera warning with severity 1 of 5." src="assets/media/traffic-1.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img alt="All Reports screen listing community traffic reports, such as a speed camera, an accident and heavy traffic, each with location, date and severity." src="assets/media/traffic-2.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img alt="Report detail dialog for a heavy traffic report, with a photo, location, date, description and severity 4 of 5." src="assets/media/traffic-3.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img alt="Map overview of Copenhagen with traffic report markers and the user’s current location." src="assets/media/traffic-4.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img alt="My Reports screen listing the reports created by the signed-in user." src="assets/media/traffic-5.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+                <li class="lightbox-slide"><img alt="Profile screen with the user’s name, email and a Sign Out button." src="assets/media/traffic-6.webp" width="488" height="901" loading="lazy" decoding="async"></li>
+              </ul>
+              <div class="lightbox-controls">
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous screenshot">←</button>
+                <p class="lightbox-counter" aria-live="polite">1 / 6</p>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next screenshot">→</button>
+              </div>
+            </dialog>
+          </div>
+          <dl class="fields">
+            <dt>Problem</dt><dd>Drivers have no quick way to warn each other about traffic jams, accidents or speed cameras as they happen. X9 lets them report an incident with a location, a photo and a severity, and see everyone’s reports on a live map.</dd>
+            <dt>My role</dt><dd>Solo project in ITU’s Mobile App Development course. I designed and built the whole Android app: sign-in, reporting with photo and location, a live list and map of reports, and a profile screen. I also added two features beyond the requirements: tapping the map to set an incident’s location, which is turned into a street address automatically, and a map that switches to a dark style when the phone’s light sensor detects night driving.</dd>
+            <dt>Technical decision</dt><dd>Reports are stored in Firebase’s real-time database, so a new report from one driver shows up on everyone else’s screen instantly, without refreshing. I kept all database code in separate classes behind the screens’ logic, so the interface doesn’t depend on Firebase and could be switched to another backend. Security rules ensure that users can only edit or delete their own reports.</dd>
+            <dt>Result</dt><dd>A working app with real-time sync across users, photo upload, GPS location and a live map, built from weekly exercises to the final hand-in.</dd>
+            <dt>Tech stack</dt><dd>Kotlin, Android, Jetpack Compose, MVVM, Firebase (Authentication, Realtime Database, Storage), Google Maps, Fused Location Provider</dd>
+            <dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/traffic-report-app">github.com/Olivia-Brophy/traffic-report-app</a></dd>
           </dl>
         </article>
 
         <article class="card project" aria-labelledby="p4-title">
           <h3 id="p4-title">Interactive Map of Denmark</h3>
+          <p class="meta">University project</p>
           <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View 6 screenshots of Interactive Map of Denmark" aria-haspopup="dialog" aria-controls="gallery-map">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 656" aria-label="View 6 screenshots of Interactive Map of Denmark" aria-haspopup="dialog" aria-controls="gallery-map">
               <img src="assets/media/map-1-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="0">
               <img src="assets/media/map-2-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="1">
               <img src="assets/media/map-3-sm.webp" alt="" width="960" height="656" loading="lazy" decoding="async" data-index="2">
-              <span class="gallery-count" aria-hidden="true">6 screenshots</span>
             </button>
             <dialog class="lightbox" id="gallery-map" aria-label="Interactive Map of Denmark screenshots">
               <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
@@ -191,23 +232,23 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+            <dt>Problem</dt><dd>Our first-year project: turn raw OpenStreetMap data for the whole of Denmark into a desktop map that you can pan, zoom, search and plan routes on, fast enough to feel smooth.</dd>
+            <dt>My role</dt><dd>In a group of five, I built the R-tree spatial index and supported nearest-neighbour search and route planning with Dijkstra’s algorithm. I handled OpenStreetMap relations such as lakes and coastlines and built the zoom levels and map layers, the scale bar, night mode and much of the toolbar.</dd>
+            <dt>Technical decision</dt><dd>To keep panning smooth with the whole country loaded, I implemented an R-tree that groups map elements by their bounding boxes. Each redraw only asks for the elements inside the visible area, and the zoom level decides which layers are drawn, so small streets are skipped when you look at all of Denmark.</dd>
+            <dt>Result</dt><dd>A working map of Denmark with address search and autocomplete, car and walking routes, night mode, and support for loading custom .osm files.</dd>
+            <dt>Tech stack</dt><dd>Java, JavaFX, Gradle, JUnit, OpenStreetMap</dd>
+            <dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/BFST2024Group10">github.com/Olivia-Brophy/BFST2024Group10</a></dd>
           </dl>
         </article>
 
         <article class="card project" aria-labelledby="p5-title">
           <h3 id="p5-title">Markerless Pose Estimation</h3>
+          <p class="meta">University project</p>
           <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View 4 screenshots of Markerless Pose Estimation" aria-haspopup="dialog" aria-controls="gallery-pose">
+            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 601" aria-label="View 4 screenshots of Markerless Pose Estimation" aria-haspopup="dialog" aria-controls="gallery-pose">
               <img src="assets/media/pose-1-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="0">
               <img src="assets/media/pose-2-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="1">
               <img src="assets/media/pose-3-sm.webp" alt="" width="960" height="601" loading="lazy" decoding="async" data-index="2">
-              <span class="gallery-count" aria-hidden="true">4 screenshots</span>
             </button>
             <dialog class="lightbox" id="gallery-pose" aria-label="Markerless Pose Estimation screenshots">
               <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
@@ -225,58 +266,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
-          </dl>
-        </article>
-
-        <article class="card project" aria-labelledby="p6-title">
-          <h3 id="p6-title">X9 Traffic Reports</h3>
-          <div class="gallery">
-            <button type="button" class="gallery-stack" aria-label="View larger screenshot of X9 Traffic Reports" aria-haspopup="dialog" aria-controls="gallery-traffic">
-              <img src="assets/media/traffic-1-sm.webp" alt="" width="960" height="544" loading="lazy" decoding="async" data-index="0">
-            </button>
-            <dialog class="lightbox" id="gallery-traffic" aria-label="X9 Traffic Reports screenshots">
-              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
-              <ul class="lightbox-track" role="list">
-                <li class="lightbox-slide"><img src="assets/media/traffic-1.webp" alt="Three phone screens from the X9 app: a map of Copenhagen with traffic report markers, a detail dialog for a heavy traffic report, and the profile screen." width="1508" height="853" loading="lazy" decoding="async"></li>
-              </ul>
-            </dialog>
-          </div>
-          <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
-          </dl>
-        </article>
-
-        <article class="card project" aria-labelledby="p7-title">
-          <h3 id="p7-title">Othello AI</h3>
-          <div class="gallery">
-            <button type="button" class="gallery-stack" style="aspect-ratio: 960 / 903" aria-label="View larger screenshot of Othello AI" aria-haspopup="dialog" aria-controls="gallery-othello">
-              <img src="assets/media/othello-1-sm.webp" alt="" width="960" height="903" loading="lazy" decoding="async" data-index="0">
-            </button>
-            <dialog class="lightbox" id="gallery-othello" aria-label="Othello AI screenshots">
-              <button type="button" class="lightbox-btn lightbox-close" aria-label="Close" autofocus>✕</button>
-              <ul class="lightbox-track" role="list">
-                <li class="lightbox-slide"><img src="assets/media/othello-1.webp" alt="Othello game window with an 8 by 8 board in the middle of a game, showing dark and light pieces." width="1920" height="1806" loading="lazy" decoding="async"></li>
-              </ul>
-            </dialog>
-          </div>
-          <dl class="fields">
-            <dt>Problem</dt><dd><span class="ph">[Problem: what was wrong or missing?]</span></dd>
-            <dt>My role</dt><dd><span class="ph">[My role: what did I personally build?]</span></dd>
-            <dt>Technical decision</dt><dd><span class="ph">[One technical decision and why]</span></dd>
-            <dt>Result</dt><dd><span class="ph">[Result: in production since / used by / measurable outcome]</span></dd>
-            <dt>Tech stack</dt><dd><span class="ph">[Tech stack]</span></dd>
-            <dt>Link</dt><dd><span class="ph">[Link: repo or live demo, or “Code not public”]</span></dd>
+            <dt>Problem</dt><dd>People recovering from knee injuries do most of their exercises at home, with no one to tell them if they’re doing them right. AI models that track body movement from an ordinary camera could fill that gap, but nobody knew how accurate they are on rehabilitation exercises, many of which are done sitting or lying down.</dd>
+            <dt>My role</dt><dd>Bachelor project at ITU with Lisa Claudi Hauge, supervised by Stella Grasshof. I built the testing setup in Python: it ran three movement-tracking models on video of eight knee exercises, filmed from five angles, measured the knee angle each model reported, and compared it with precise lab measurements of the same movements.</dd>
+            <dt>Technical decision</dt><dd>Some camera angles make a knee angle hard to read, no matter how good the model is. So I also calculated how accurate a perfect model could be from each angle. That way, we could tell whether a poor result came from the model or from where the camera was placed.</dd>
+            <dt>Result</dt><dd>No model was accurate enough in every situation, and some camera angles couldn’t reach the clinical target at all. The most accurate model was too slow to run live. The fast one, MediaPipe, came close to the accuracy of a physiotherapist measuring by hand, as long as the camera faced the patient at about 1 m height. In short: a phone placed in front of you, with the right model, could already give useful feedback on seated exercises.</dd>
+            <dt>Tech stack</dt><dd>Python, MediaPipe, MMPose, OpenPose, MotionBERT, NumPy, pandas, OpenCV</dd>
+            <dt>Link</dt><dd><a href="https://github.com/itu-bsc-pose-estimation/model-comparison-analysis">github.com/itu-bsc-pose-estimation/model-comparison-analysis</a></dd>
           </dl>
         </article>
 
@@ -294,23 +289,23 @@
         <li>I reviewed the output, edited it, wrote all the content, and tested it with Lighthouse and keyboard navigation.</li>
       </ol>
       <h3>What I changed and why</h3>
-      <p><span class="ph">[What I changed in the generated code, and why]</span></p>
+      <p>[What I changed in the generated code, and why]</p>
     </section>
 
     <!-- 5. Contact -->
     <section id="contact" class="section container" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <ul class="contact-list" role="list">
-        <li><span class="contact-label">Email</span> <span class="ph">[email address]</span></li>
+        <li><span class="contact-label">Email</span> [email address]</li>
         <li><span class="contact-label">GitHub</span> <a href="https://github.com/Olivia-Brophy">github.com/Olivia-Brophy</a></li>
-        <li><span class="contact-label">LinkedIn</span> <span class="ph">[LinkedIn URL]</span></li>
+        <li><span class="contact-label">LinkedIn</span> [LinkedIn URL]</li>
       </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p><span class="ph">[Lighthouse scores: Performance / Accessibility / Best Practices / SEO]</span> · <span class="ph">[WCAG 2.2 level]</span></p>
+      <p>[Lighthouse scores: Performance / Accessibility / Best Practices / SEO] · [WCAG 2.2 level]</p>
     </div>
   </footer>
 </body>
