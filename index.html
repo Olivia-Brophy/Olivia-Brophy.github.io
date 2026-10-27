@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -24,7 +24,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -32,37 +32,48 @@
 
   <main id="main" tabindex="-1">
     <!-- 1. Intro -->
-    <section id="top" class="intro container" aria-labelledby="intro-heading">
+    <section id="top" class="hero" aria-labelledby="intro-heading">
+      <div class="container hero-inner">
       <div class="intro-text">
+        <p class="eyebrow">Hi, I’m</p>
         <h1 id="intro-heading">Olivia Brophy</h1>
-        <p class="role">Junior Full-Stack Developer</p>
+        <p class="role">Junior Full-Stack Developer, based in Copenhagen</p>
         <p class="education">BSc in Software Development, IT University of Copenhagen</p>
         <p class="lead">I’m a developer who cares about the people on the other side of the screen. I like making things fast, accessible and easy to understand, and writing code the next person can pick up without a headache. I do my best work in teams that collaborate closely and still find time to laugh. As much a people person as a computer person.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">See my projects</a>
+          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+        </div>
       </div>
       <div class="profile">
         <img class="profile-photo" src="assets/media/olivia.webp" alt="Portrait of Olivia Brophy" width="480" height="480" fetchpriority="high">
       </div>
+      </div>
     </section>
 
+
     <!-- 2. Experience -->
-    <section id="experience" class="section container" aria-labelledby="experience-heading">
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
       <h2 id="experience-heading">Experience</h2>
       <ol class="stack" role="list">
-        <li class="card">
+        <li>
           <h3>Nordea</h3>
           <p class="meta">Student developer – Savings and Investments, since 2026</p>
           <p>I’m a front-end developer in a Scrum team in Savings and Investments, building with Angular and the shared common components. I have a strong focus on UI and accessibility, and I’m currently supporting the UI uplift PI. I’m also part of the front-end ambassador team, and our development is assisted by Copilot.</p>
         </li>
-        <li class="card">
+        <li>
           <h3>Digitaliseringsstyrelsen</h3>
           <p class="meta">Student worker in the web team, 2024–2026</p>
           <p>I developed, documented and maintained internal web applications with TypeScript, React and HTML/CSS, and worked on web development, design and content updates. I was the team’s quality assurance and accessibility supervisor, and I developed and taught courses on CMS platforms, film editing and digital accessibility.</p>
         </li>
       </ol>
+      </div>
     </section>
 
     <!-- 3. Projects -->
-    <section id="projects" class="section container container-wide" aria-labelledby="projects-heading">
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
       <h2 id="projects-heading">Projects</h2>
       <div class="project-grid">
 
@@ -91,12 +102,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>Digitaliseringsstyrelsen communicates through more than ten channels, and employees had no shared way of deciding which one fits a given message. With the entire population as the audience, the wrong channel means the message doesn’t reach the people it’s meant for.</dd>
-            <dt>My role</dt><dd>I designed, built and maintained the tool end to end: the decision-tree logic, the React interface, the build pipeline and the deployment. I ran user workshops and survey tests with employees, and iterated on the content with the communications manager.</dd>
-            <dt>Technical decision</dt><dd>I designed the tool so people without development experience could maintain it. The decision tree is kept separate from the React code, and a GitLab CI/CD pipeline builds it into a single self-contained HTML file that is embedded in Umbraco. Updating the tree means editing the content, and the pipeline handles the rest: no hosting to manage and no changes to the CMS core.</dd>
-            <dt>Result</dt><dd>In production since February 2026, used by offices across the agency. Builds and deployments are automated with GitLab CI/CD. I documented the setup and handed it over, and it is now maintained by communications staff without developer involvement.</dd>
-            <dt>Tech stack</dt><dd>React, Vite, Umbraco, GitLab CI/CD</dd>
-            <dt>Link</dt><dd>Code not public</dd>
+            <div class="field"><dt>Problem</dt><dd>Digitaliseringsstyrelsen communicates through more than ten channels, and employees had no shared way of deciding which one fits a given message. With the entire population as the audience, the wrong channel means the message doesn’t reach the people it’s meant for.</dd></div>
+            <div class="field"><dt>My role</dt><dd>I designed, built and maintained the tool end to end: the decision-tree logic, the React interface, the build pipeline and the deployment. I ran user workshops and survey tests with employees, and iterated on the content with the communications manager.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>I designed the tool so people without development experience could maintain it. The decision tree is kept separate from the React code, and a GitLab CI/CD pipeline builds it into a single self-contained HTML file that is embedded in Umbraco. Updating the tree means editing the content, and the pipeline handles the rest: no hosting to manage and no changes to the CMS core.</dd></div>
+            <div class="field"><dt>Result</dt><dd>In production since February 2026, used by offices across the agency. Builds and deployments are automated with GitLab CI/CD. I documented the setup and handed it over, and it is now maintained by communications staff without developer involvement.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>React, Vite, Umbraco, GitLab CI/CD</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd>Code not public</dd></div>
           </dl>
         </article>
 
@@ -126,12 +137,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>Camp staff needed one place to see the camp map, handle reception and maintenance requests and follow population statistics, instead of spreadsheets and printed out maps.</dd>
-            <dt>My role</dt><dd>Working in a student team, I worked across the stack. I created wireframes and a LO-FI prototype. I built the header and navigation, set up the frontend test suite with Jest and React Testing Library, and added sorting of reception requests by date. I also took the app to production, creating the Azure deployment pipeline, connecting the deployed API to its database, seeding camp data at startup and moving API URLs into environment config.</dd>
-            <dt>Technical decision</dt><dd>Every fetch call in the frontend pointed at a hardcoded localhost URL, which broke as soon as the app was deployed. I moved the API base URL into Vite environment files so the same code runs locally and in production, and added a navigation fallback to the Azure Static Web Apps config so refreshing a page no longer returned a 404.</dd>
-            <dt>Result</dt><dd>Deployed on Azure, with the React frontend on Static Web Apps and the .NET API on App Service. Frontend and backend tests run automatically in GitHub Actions. It was very well received amongst stakeholders.</dd>
-            <dt>Tech stack</dt><dd>React, TypeScript, Vite, Tailwind CSS, Mapbox GL, ECharts, ASP.NET Core (.NET 8), Entity Framework Core, SQLite, Jest, Azure, GitHub Actions</dd>
-            <dt>Link</dt><dd>Code not public</dd>
+            <div class="field"><dt>Problem</dt><dd>Camp staff needed one place to see the camp map, handle reception and maintenance requests and follow population statistics, instead of spreadsheets and printed out maps.</dd></div>
+            <div class="field"><dt>My role</dt><dd>Working in a student team, I worked across the stack. I created wireframes and a LO-FI prototype. I built the header and navigation, set up the frontend test suite with Jest and React Testing Library, and added sorting of reception requests by date. I also took the app to production, creating the Azure deployment pipeline, connecting the deployed API to its database, seeding camp data at startup and moving API URLs into environment config.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>Every fetch call in the frontend pointed at a hardcoded localhost URL, which broke as soon as the app was deployed. I moved the API base URL into Vite environment files so the same code runs locally and in production, and added a navigation fallback to the Azure Static Web Apps config so refreshing a page no longer returned a 404.</dd></div>
+            <div class="field"><dt>Result</dt><dd>Deployed on Azure, with the React frontend on Static Web Apps and the .NET API on App Service. Frontend and backend tests run automatically in GitHub Actions. It was very well received amongst stakeholders.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>React, TypeScript, Vite, Tailwind CSS, Mapbox GL, ECharts, ASP.NET Core (.NET 8), Entity Framework Core, SQLite, Jest, Azure, GitHub Actions</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd>Code not public</dd></div>
           </dl>
         </article>
 
@@ -160,12 +171,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>The brief for the Analysis, Design and Software Architecture course: build “Chirp”, a small Twitter-like platform, and evolve it week by week from a command-line program into a deployed web application with accounts, following and a real database.</dd>
-            <dt>My role</dt><dd>In a group of five, I focused on the data layer and testing. I moved storage from CSV to SQLite and then to Entity Framework Core with a repository pattern, wrote integration tests, and set up end-to-end tests with Playwright. I also added GitHub login with OAuth, follow buttons per author, the final visual redesign and the Azure deployment workflow.</dd>
-            <dt>Technical decision</dt><dd>I made the integration tests run against an in-memory SQLite database instead of the real database file. Every test starts from a clean, known state, the suite runs fast, and tests can’t corrupt shared data, so the whole suite runs in GitHub Actions on every push.</dd>
-            <dt>Result</dt><dd>Deployed on Azure App Service with automated build, test and release workflows in GitHub Actions.</dd>
-            <dt>Tech stack</dt><dd>C#, ASP.NET Core Razor Pages, Entity Framework Core, SQLite, ASP.NET Identity with GitHub OAuth, xUnit, Playwright, Azure, GitHub Actions</dd>
-            <dt>Link</dt><dd><a href="https://github.com/ITU-BDSA2024-GROUP22/Chirp">github.com/ITU-BDSA2024-GROUP22/Chirp</a></dd>
+            <div class="field"><dt>Problem</dt><dd>The brief for the Analysis, Design and Software Architecture course: build “Chirp”, a small Twitter-like platform, and evolve it week by week from a command-line program into a deployed web application with accounts, following and a real database.</dd></div>
+            <div class="field"><dt>My role</dt><dd>In a group of five, I focused on the data layer and testing. I moved storage from CSV to SQLite and then to Entity Framework Core with a repository pattern, wrote integration tests, and set up end-to-end tests with Playwright. I also added GitHub login with OAuth, follow buttons per author, the final visual redesign and the Azure deployment workflow.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>I made the integration tests run against an in-memory SQLite database instead of the real database file. Every test starts from a clean, known state, the suite runs fast, and tests can’t corrupt shared data, so the whole suite runs in GitHub Actions on every push.</dd></div>
+            <div class="field"><dt>Result</dt><dd>Deployed on Azure App Service with automated build, test and release workflows in GitHub Actions.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>C#, ASP.NET Core Razor Pages, Entity Framework Core, SQLite, ASP.NET Identity with GitHub OAuth, xUnit, Playwright, Azure, GitHub Actions</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd><a href="https://github.com/ITU-BDSA2024-GROUP22/Chirp">github.com/ITU-BDSA2024-GROUP22/Chirp</a></dd></div>
           </dl>
         </article>
 
@@ -196,12 +207,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>Drivers have no quick way to warn each other about traffic jams, accidents or speed cameras as they happen. X9 lets them report an incident with a location, a photo and a severity, and see everyone’s reports on a live map.</dd>
-            <dt>My role</dt><dd>Solo project in ITU’s Mobile App Development course. I designed and built the whole Android app: sign-in, reporting with photo and location, a live list and map of reports, and a profile screen. I also added two features beyond the requirements: tapping the map to set an incident’s location, which is turned into a street address automatically, and a map that switches to a dark style when the phone’s light sensor detects night driving.</dd>
-            <dt>Technical decision</dt><dd>Reports are stored in Firebase’s real-time database, so a new report from one driver shows up on everyone else’s screen instantly, without refreshing. I kept all database code in separate classes behind the screens’ logic, so the interface doesn’t depend on Firebase and could be switched to another backend. Security rules ensure that users can only edit or delete their own reports.</dd>
-            <dt>Result</dt><dd>A working app with real-time sync across users, photo upload, GPS location and a live map, built from weekly exercises to the final hand-in.</dd>
-            <dt>Tech stack</dt><dd>Kotlin, Android, Jetpack Compose, MVVM, Firebase (Authentication, Realtime Database, Storage), Google Maps, Fused Location Provider</dd>
-            <dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/traffic-report-app">github.com/Olivia-Brophy/traffic-report-app</a></dd>
+            <div class="field"><dt>Problem</dt><dd>Drivers have no quick way to warn each other about traffic jams, accidents or speed cameras as they happen. X9 lets them report an incident with a location, a photo and a severity, and see everyone’s reports on a live map.</dd></div>
+            <div class="field"><dt>My role</dt><dd>Solo project in ITU’s Mobile App Development course. I designed and built the whole Android app: sign-in, reporting with photo and location, a live list and map of reports, and a profile screen. I also added two features beyond the requirements: tapping the map to set an incident’s location, which is turned into a street address automatically, and a map that switches to a dark style when the phone’s light sensor detects night driving.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>Reports are stored in Firebase’s real-time database, so a new report from one driver shows up on everyone else’s screen instantly, without refreshing. I kept all database code in separate classes behind the screens’ logic, so the interface doesn’t depend on Firebase and could be switched to another backend. Security rules ensure that users can only edit or delete their own reports.</dd></div>
+            <div class="field"><dt>Result</dt><dd>A working app with real-time sync across users, photo upload, GPS location and a live map, built from weekly exercises to the final hand-in.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>Kotlin, Android, Jetpack Compose, MVVM, Firebase (Authentication, Realtime Database, Storage), Google Maps, Fused Location Provider</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/traffic-report-app">github.com/Olivia-Brophy/traffic-report-app</a></dd></div>
           </dl>
         </article>
 
@@ -232,12 +243,12 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>Our first-year project: turn raw OpenStreetMap data for the whole of Denmark into a desktop map that you can pan, zoom, search and plan routes on, fast enough to feel smooth.</dd>
-            <dt>My role</dt><dd>In a group of five, I built the R-tree spatial index and supported nearest-neighbour search and route planning with Dijkstra’s algorithm. I handled OpenStreetMap relations such as lakes and coastlines and built the zoom levels and map layers, the scale bar, night mode and much of the toolbar.</dd>
-            <dt>Technical decision</dt><dd>To keep panning smooth with the whole country loaded, I implemented an R-tree that groups map elements by their bounding boxes. Each redraw only asks for the elements inside the visible area, and the zoom level decides which layers are drawn, so small streets are skipped when you look at all of Denmark.</dd>
-            <dt>Result</dt><dd>A working map of Denmark with address search and autocomplete, car and walking routes, night mode, and support for loading custom .osm files.</dd>
-            <dt>Tech stack</dt><dd>Java, JavaFX, Gradle, JUnit, OpenStreetMap</dd>
-            <dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/BFST2024Group10">github.com/Olivia-Brophy/BFST2024Group10</a></dd>
+            <div class="field"><dt>Problem</dt><dd>Our first-year project: turn raw OpenStreetMap data for the whole of Denmark into a desktop map that you can pan, zoom, search and plan routes on, fast enough to feel smooth.</dd></div>
+            <div class="field"><dt>My role</dt><dd>In a group of five, I built the R-tree spatial index and supported nearest-neighbour search and route planning with Dijkstra’s algorithm. I handled OpenStreetMap relations such as lakes and coastlines and built the zoom levels and map layers, the scale bar, night mode and much of the toolbar.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>To keep panning smooth with the whole country loaded, I implemented an R-tree that groups map elements by their bounding boxes. Each redraw only asks for the elements inside the visible area, and the zoom level decides which layers are drawn, so small streets are skipped when you look at all of Denmark.</dd></div>
+            <div class="field"><dt>Result</dt><dd>A working map of Denmark with address search and autocomplete, car and walking routes, night mode, and support for loading custom .osm files.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>Java, JavaFX, Gradle, JUnit, OpenStreetMap</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd><a href="https://github.com/Olivia-Brophy/BFST2024Group10">github.com/Olivia-Brophy/BFST2024Group10</a></dd></div>
           </dl>
         </article>
 
@@ -266,20 +277,22 @@
             </dialog>
           </div>
           <dl class="fields">
-            <dt>Problem</dt><dd>People recovering from knee injuries do most of their exercises at home, with no one to tell them if they’re doing them right. AI models that track body movement from an ordinary camera could fill that gap, but nobody knew how accurate they are on rehabilitation exercises, many of which are done sitting or lying down.</dd>
-            <dt>My role</dt><dd>Bachelor project at ITU with Lisa Claudi Hauge, supervised by Stella Grasshof. I built the testing setup in Python: it ran three movement-tracking models on video of eight knee exercises, filmed from five angles, measured the knee angle each model reported, and compared it with precise lab measurements of the same movements.</dd>
-            <dt>Technical decision</dt><dd>Some camera angles make a knee angle hard to read, no matter how good the model is. So I also calculated how accurate a perfect model could be from each angle. That way, we could tell whether a poor result came from the model or from where the camera was placed.</dd>
-            <dt>Result</dt><dd>No model was accurate enough in every situation, and some camera angles couldn’t reach the clinical target at all. The most accurate model was too slow to run live. The fast one, MediaPipe, came close to the accuracy of a physiotherapist measuring by hand, as long as the camera faced the patient at about 1 m height. In short: a phone placed in front of you, with the right model, could already give useful feedback on seated exercises.</dd>
-            <dt>Tech stack</dt><dd>Python, MediaPipe, MMPose, OpenPose, MotionBERT, NumPy, pandas, OpenCV</dd>
-            <dt>Link</dt><dd><a href="https://github.com/itu-bsc-pose-estimation/model-comparison-analysis">github.com/itu-bsc-pose-estimation/model-comparison-analysis</a></dd>
+            <div class="field"><dt>Problem</dt><dd>People recovering from knee injuries do most of their exercises at home, with no one to tell them if they’re doing them right. AI models that track body movement from an ordinary camera could fill that gap, but nobody knew how accurate they are on rehabilitation exercises, many of which are done sitting or lying down.</dd></div>
+            <div class="field"><dt>My role</dt><dd>Bachelor project at ITU with Lisa Claudi Hauge, supervised by Stella Grasshof. I built the testing setup in Python: it ran three movement-tracking models on video of eight knee exercises, filmed from five angles, measured the knee angle each model reported, and compared it with precise lab measurements of the same movements.</dd></div>
+            <div class="field"><dt>Technical decision</dt><dd>Some camera angles make a knee angle hard to read, no matter how good the model is. So I also calculated how accurate a perfect model could be from each angle. That way, we could tell whether a poor result came from the model or from where the camera was placed.</dd></div>
+            <div class="field"><dt>Result</dt><dd>No model was accurate enough in every situation, and some camera angles couldn’t reach the clinical target at all. The most accurate model was too slow to run live. The fast one, MediaPipe, came close to the accuracy of a physiotherapist measuring by hand, as long as the camera faced the patient at about 1 m height. In short: a phone placed in front of you, with the right model, could already give useful feedback on seated exercises.</dd></div>
+            <div class="field field-wide"><dt>Tech stack</dt><dd>Python, MediaPipe, MMPose, OpenPose, MotionBERT, NumPy, pandas, OpenCV</dd></div>
+            <div class="field field-wide"><dt>Link</dt><dd><a href="https://github.com/itu-bsc-pose-estimation/model-comparison-analysis">github.com/itu-bsc-pose-estimation/model-comparison-analysis</a></dd></div>
           </dl>
         </article>
 
       </div>
+      </div>
     </section>
 
     <!-- 4. How this site was built -->
-    <section id="process" class="section container" aria-labelledby="process-heading">
+    <section id="process" class="section" aria-labelledby="process-heading">
+      <div class="container">
       <h2 id="process-heading">How this site was built</h2>
       <p>I built this site with Claude Code, an AI coding assistant that works in the terminal. My workflow:</p>
       <ol class="steps">
@@ -289,17 +302,23 @@
         <li>I reviewed the output, edited it, wrote all the content, and tested it with Lighthouse and keyboard navigation.</li>
       </ol>
       <h3>What I changed and why</h3>
-      <p>[What I changed in the generated code, and why]</p>
+      <p><strong>Design.</strong> The first version followed my brief closely, but in the browser it felt like a page you just scroll past. I pushed it wider and more modern, then cut what felt like too much: a scrolling skills bar, pill labels, section numbers, a logo mark and sticky images. Each round, I judged the real page, not the code.</p>
+      <p><strong>Code.</strong> I treated the generated code as a starting point, not a finished product. I reviewed the HTML structure and CSS, simplified anything that felt unnecessarily complicated, and made sure the implementation supported the design rather than dictating it. I wanted the site to remain lightweight, readable and easy to maintain, without introducing dependencies I didn’t need.</p>
+      <p><strong>Content.</strong> Claude drafted project texts from my repositories and commit history, which was a useful starting point, but I rewrote every one. I corrected what I had actually built, added features it couldn’t see, and cut a project where the draft couldn’t show my own contribution.</p>
+      <p><strong>Details.</strong> I let screenshots keep their natural proportions, removed labels that made the tech stacks feel busy, and adjusted spacing until the text was comfortable to read.</p>
+      </div>
     </section>
 
     <!-- 5. Contact -->
-    <section id="contact" class="section container" aria-labelledby="contact-heading">
+    <section id="contact" class="section band-accent" aria-labelledby="contact-heading">
+      <div class="container">
       <h2 id="contact-heading">Contact</h2>
       <ul class="contact-list" role="list">
-        <li><span class="contact-label">Email</span> [email address]</li>
+        <li><span class="contact-label">Email</span> <a href="mailto:oliviabrophy@gmail.com">oliviabrophy@gmail.com</a></li>
         <li><span class="contact-label">GitHub</span> <a href="https://github.com/Olivia-Brophy">github.com/Olivia-Brophy</a></li>
-        <li><span class="contact-label">LinkedIn</span> [LinkedIn URL]</li>
+        <li><span class="contact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/olivia-brophy-989a06403">Olivia Brophy</a></li>
       </ul>
+      </div>
     </section>
   </main>
 

@@ -4,9 +4,9 @@ Personal portfolio for Olivia Brophy (junior full-stack developer), hosted on Gi
 
 ## Tech
 - Plain semantic HTML and CSS. No framework, no build step.
-- Minimal JavaScript only if strictly needed (currently only `script.js`: the screenshot carousel).
+- Minimal JavaScript only if strictly needed (currently only `script.js`: screenshot carousel, active menu link, fade-in on scroll).
 - English content.
-- Files: `index.html` (single page), `styles.css` (tokens + all styles), `script.js` (screenshot carousel), `assets/` (favicon, `media/`).
+- Files: `index.html` (single page), `styles.css` (tokens + all styles), `script.js` (carousel, menu highlight, fade-in), `assets/` (favicon, `media/`).
 
 ## Quality
 - WCAG 2.2 AA: proper landmarks, logical heading order (one h1 → h2 per section → h3), skip link, visible `:focus-visible` states, AA contrast, meaningful alt text.
@@ -14,19 +14,21 @@ Personal portfolio for Olivia Brophy (junior full-stack developer), hosted on Gi
 - Responsive and comfortable on mobile.
 - Respect `prefers-reduced-motion`.
 
-## Design: Nordic and warm
-Friendly and personal without being cute. Modern, calm, minimal.
-- Typography: Instrument Sans (Google Fonts, `display=swap`) for everything. Hierarchy comes from weight and size only. Line length about 65ch (`--measure`).
+## Design: modern, upbeat and lively
+Confident and playful without being cute. Uses the full width of the screen.
+- Typography: Instrument Sans (Google Fonts, `display=swap`, weights 400–700) for everything. Big, bold, tightly tracked headings; hierarchy from weight and size. Paragraphs capped at about 65ch (`--measure`).
 - Colours only through the CSS custom properties in `styles.css`:
-  - `--bg` warm sand, `--text` warm near-black.
-  - `--accent` dark terracotta for links, buttons and focus. It must meet AA against `--bg` and `--surface`.
-  - `--accent-soft` lighter terracotta for decorative surfaces and details only, never text.
-  - Dark mode via `prefers-color-scheme`: warm dark tones (not pure black), with the accent adjusted to keep AA.
+  - `--bg` warm white, `--surface` white cards, `--surface-alt` mint tint (lightbox and hover backgrounds), `--text` ink.
+  - `--accent` green for links, buttons and focus (AA on all surfaces); `--on-accent` for text on it.
+  - `--pop-coral`, `--pop-sun`, `--pop-mint` are decorative pops (progress bar, the coral line above each experience entry). Text on them uses `--on-pop`.
+- No pill labels or chips around text (degree, tech stack, status): keep those as plain text. No logo mark, no section numbers, no boxes around the experience entries.
+  - Dark mode via `prefers-color-scheme`: deep green-ink background, lighter green accent.
   - Check contrast ratios whenever a colour changes.
-- Shapes: soft rounded corners (`--radius`, `--radius-sm`), subtle borders instead of heavy shadows. No gradients.
-- Layout: generous whitespace and a clear rhythm (`--space-*` scale). Single column on mobile. Projects may use two columns from 900px.
-- Motion: subtle hover and focus transitions (`--transition`), a short intro entrance on load, CSS scroll-driven reveals and a reading progress bar (`--duration-enter`, `--ease-out`). All motion sits inside `prefers-reduced-motion: no-preference`, and scroll effects are `@supports`-guarded so unsupported browsers just show the content.
-- Header is sticky with a translucent blurred background.
+- Shapes: generous radii (`--radius`, pill buttons), subtle borders, flat colour shapes. No gradients.
+- Layout: full-width container (`--page-max` 90rem, fluid `--gutter`), neutral sections split by a hairline aligned with the content, with a green `.band-accent` for Contact. Projects are wide cards with media always on the left from 960px (not sticky); fields in a single column. Single column on mobile.
+- The photo sits on a soft coral offset disc (`--pop-coral-soft`) that glides slowly on hover (`--duration-soft`, `--ease-soft`).
+- Motion: hover lifts, hero entrance, fade-in on scroll (IntersectionObserver in `script.js`, `.reveal`/`.is-visible`), progress bar. All motion sits inside `prefers-reduced-motion: no-preference`; scroll effects are `@supports`-guarded.
+- Header is sticky with a translucent blurred background; the menu highlights the section in view.
 
 ## Content conventions
 - Unfilled text is written as plain `[bracketed]` text, no highlight (the yellow boxes were hard to read). Unfilled media uses `div.ph`, which renders a "TO FILL" box.

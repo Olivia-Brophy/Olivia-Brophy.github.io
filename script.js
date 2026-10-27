@@ -46,3 +46,36 @@ document.querySelectorAll('.gallery').forEach((gallery) => {
     if (event.target === dialog || event.target.classList.contains('lightbox-slide')) dialog.close();
   });
 });
+
+// Highlight the menu link for the section currently in view.
+const navLinks = [...document.querySelectorAll('.nav-list a[href^="#"]')];
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
+    });
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+navLinks.forEach((link) => {
+  const section = document.querySelector(link.getAttribute('href'));
+  if (section) sectionObserver.observe(section);
+});
+
+// Fade content in as it scrolls into view (skipped when the visitor prefers less motion).
+if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.section h2, .section .container > p, .section h3, .stack > li, .project .gallery, .field, .steps li, .contact-list li'
+  ).forEach((el) => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+}
